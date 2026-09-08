@@ -51,3 +51,36 @@ CREATE TABLE Movimiento (
   CONSTRAINT fk_movimiento_producto FOREIGN KEY (productoID) REFERENCES Producto (productoID),
   CONSTRAINT fk_movimiento_usuario  FOREIGN KEY (usuarioID)  REFERENCES Usuario (usuarioID)
 );
+
+
+# insertando valores a la tabla Producto
+INSERT INTO Producto VALUES
+  ("PR000001","Reactivo Glucosa","Caja",10),
+  ("PR000002","Guantes de nitrilo","Caja",50),
+  ("PR000003","Tubo de ensayo EDTA","Unidad",200);
+
+# insertando valores a la tabla Proveedor
+INSERT INTO Proveedor VALUES
+  ("PV000001","Diagnostica SAC","20456789123","014567890"),
+  ("PV000002","BioInsumos Peru EIRL","20567891234","016789012"),
+  ("PV000003","LabSupply Import SA","20678912345","017890123");
+
+# insertando valores a la tabla Usuario
+INSERT INTO Usuario VALUES
+  ("US000001","Carla Ramos Diaz","Almacen"),
+  ("US000002","Jorge Salinas Vega","Bioquimica"),
+  ("US000003","Lucia Fernandez Rojas","Hematologia");
+
+# insertando valores a la tabla Producto_Proveedor
+INSERT INTO Producto_Proveedor VALUES
+  ("PR000001","PV000001"),
+  ("PR000001","PV000002"),
+  ("PR000002","PV000002"),
+  ("PR000003","PV000003");
+
+# insertando valores a la tabla Movimiento
+INSERT INTO Movimiento (productoID, usuarioID, tipoMovimiento, cantidad, fechaMovimiento) VALUES
+  ("PR000001","US000001","ENTRADA",30,"2026-08-01"),
+  ("PR000002","US000002","SALIDA",5,"2026-08-03"),
+  ("PR000003","US000001","ENTRADA",100,"2026-08-05"),
+  ("PR000001","US000003","SALIDA",8,"2026-08-07");
